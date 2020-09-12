@@ -1,1 +1,1 @@
-alert("I am coding to become a web developer!!!")
+import '../styles/styles.css';
