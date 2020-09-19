@@ -1,10 +1,10 @@
 const path = require('path');
 
-const postCSSPlugins = [
+/* const postCSSPlugins = [
     require('postcss-simple-vars'),
     require('postcss-nested'),
     require('autoprefixer')
-];
+]; */
 
 module.exports = {
     entry: './app/assets/js/index.js',
@@ -19,29 +19,17 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    'style-loader',
-                    'css-loader',
+                    'style-loader', 
+                    'css-loader', 
                     {
                         loader: 'postcss-loader',
                         options: {
-                            postcssOptions: {
-                                plugins: [
-                                    'postcss-preset-env',
-                                    {
-                                        stage: 4,
-                                        features: {
-                                            'nesting-rules': true
-                                        }, 
-                                        browsers: 'last 2 versions'
-                                    }
-                                ],
-                                
-                            }
+                            sourceMap: true
                         }
                     }
                 ]
             }
         ]
-    },
+    } 
     
 };
